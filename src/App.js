@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import "./App.css";
 import ImgComp from "./ImgComp"
-
+import styled from 'styled-components'
 
   const dummyData = {
     date: "2022-10-17",
@@ -18,23 +18,44 @@ import ImgComp from "./ImgComp"
 function App() {
   const [Data, setData] = useState(dummyData)
 
+const TitleH1 = styled.h1`
+  font-family: "Courier New", Courier, monospace;
+  font-size: 30px;
+  letter-spacing: 2.8px;
+  word-spacing: -0.6px;
+  color: white;
+  font-weight: 700;
+  text-decoration: underline solid black;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: uppercase;
+`;
 
-
+const TitleWrapper = styled.div`
+width: 100%;
+background-color: #282c34;
+opacity: 50%;
+text-align: center;
+display: flex;
+flex-direction: column;
+`;
 
 //  useEffect(() => {
 
 //   axios.get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY`)
 
-//     .then(res => { 
-//       setData(res.data)
-//     })
+//     .then(res => 
+//       setData(res.data),
+//       console.log(Data)
+//     )
 
-//     .catch(err => {
+//     .catch(err => 
 //       console.error(err)
-//     })
+//     )
 
 //     }, [])
-  
+
+   
   
 
 
@@ -42,13 +63,13 @@ function App() {
   return (
 
     <div>
-      <div className="siteheader">
+      <TitleWrapper>
         
-          <div className="title">
-            <h1>Daily Cosmos Snapshot</h1>
-          </div>
+         
+            <TitleH1>Daily Cosmos Snapshot</TitleH1>
+         
 
-      </div>
+      </TitleWrapper>
 
       <ImgComp photo={Data}/>
         

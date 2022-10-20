@@ -1,6 +1,7 @@
 import React from "react";
 import './App.css'
 
+
 const dummyData = {
     date: "2022-10-17",
 
@@ -12,6 +13,9 @@ const dummyData = {
 
     url: "https://apod.nasa.gov/apod/image/2210/GrbRings_SwiftMiller_960.jpg",
   }
+
+
+
 
 
 const ImgComp = (props) => {
